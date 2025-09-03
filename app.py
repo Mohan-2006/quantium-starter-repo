@@ -1,6 +1,16 @@
-from dash import Dash, dcc, html
 import pandas as pd
 import plotly.graph_objs as go
+import dash
+from dash import Dash, html, dcc
+
+app = Dash(__name__)
+
+app.layout = html.Div([
+    html.H1("Header Text", id="header"),
+    dcc.Graph(id="js-plotly-plot"),
+    dcc.Dropdown(id="region-picker")
+])
+
 
 # Example sales data; replace with your actual dataset
 data = {
